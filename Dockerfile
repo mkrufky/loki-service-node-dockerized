@@ -1,4 +1,4 @@
-# download files but ditch wget and unzip from the final image
+# download files but only copy lokid into the final image
 
 # download stage
 FROM ubuntu:18.04 AS fetcher
