@@ -21,7 +21,7 @@ FROM ubuntu:18.04
 RUN apt-get update
 RUN apt-get dist-upgrade -y
 
-COPY --from=fetcher /loki-linux-x64-1.0.4/* /usr/sbin/
+COPY --from=fetcher /loki-linux-x64-1.0.4/lokid /usr/sbin/
 
 CMD [ "/usr/sbin/lokid" ]
 EXPOSE 22022 22023
