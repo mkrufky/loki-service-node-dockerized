@@ -63,7 +63,17 @@ systemctl restart lokinode
 ```
 
 ## To use a newer loki release:
-Update `zipfile.url.in` and `zipfile.sha256sum.in` with the url to the latest zipfile and its sha256sum.
+Update `zipfile.url.in` and `zipfile.sha256sum.in` with the url to the latest zipfile and its sha256sum, then commit those files using git:
+```
+git add zipfile.url.in zipfile.sha256sum.in
+git commit -m "update Loki release"
+```
+The `Makefile` system won't notice your changes if you don't `git commit` them.
+
+Restart the service for the changes to take effect:
+```
+systemctl restart lokinode
+```
 
 Loki releases, along with their sha256sum can be found at [https://github.com/loki-project/loki/releases](https://github.com/loki-project/loki/releases)
 
