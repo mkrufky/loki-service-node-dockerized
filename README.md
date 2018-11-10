@@ -21,12 +21,11 @@ make interactive
 make daemon
 ```
 
-
 ## To run as a systemd service:
 Assuming you have created a user `loki` in group `loki` and have cloned this repository in the `loki` home user directory,
 the following service file will start the daemon automatically at system startup.
 
-Enter the following into /etc/systemd/system/lokinode.service:
+Enter the following into `/etc/systemd/system/lokinode.service`:
 ```
 [Unit]
 Description=Loki daemon service
@@ -62,7 +61,13 @@ To restart the service:
 ```
 systemctl restart lokinode
 ```
+
+## To use a newer loki release:
+Update `zipfile.url.in` and `zipfile.sha256sum.in` with the url to the latest zipfile and its sha256sum.
+
+Loki releases, along with their sha256sum can be found at [https://github.com/loki-project/loki/releases](https://github.com/loki-project/loki/releases)
+
 <hr>
 
 #### Donations accepted:
-`LQVBxRvxBNYLFyHRiA5XNZXpi1dvptvR5THSN4c9FCYSU7mtLWPQpc99kqTQjJNnNETt35m6cT6Qb4jLtL5x8iwAL3mPnSE (LOKI)`
+`LQVBxRvxBNYLFyHRiA5XNZXpi1dvptvR5THSN4c9FCYSU7mtLWPQpc99kqTQjJNnNETt35m6cT6Qb4jLtL5x8iwAL3mPnSE` (LOKI)
