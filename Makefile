@@ -12,7 +12,7 @@ build: env
 	@docker build --build-arg ZIPFILE="${ZIPFILE}" --build-arg SHA256SUM="${SHA256SUM}" --build-arg URL="${URL}" --build-arg TEMPDIR="${TEMPDIR}" -f Dockerfile -t lokid:${GIT_REF} .
 
 daemon: build
-	@docker run -p 22022-22023:22022-22023 --mount source=lokid,target=/data/loki lokid:${GIT_REF} lokid --data-dir /data/loki --service-node --rpc-no-ipv6 --non-interactive
+	@docker run -p 22022-22023:22022-22023 --mount source=lokid,target=/data/loki lokid:${GIT_REF} lokid --data-dir /data/loki --service-node --non-interactive
 
 interactive: build
-	@docker run -i -p 22022-22023:22022-22023 --mount source=lokid,target=/data/loki lokid:${GIT_REF} lokid --data-dir /data/loki --service-node --rpc-no-ipv6
+	@docker run -i -p 22022-22023:22022-22023 --mount source=lokid,target=/data/loki lokid:${GIT_REF} lokid --data-dir /data/loki --service-node
