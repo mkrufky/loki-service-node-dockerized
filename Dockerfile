@@ -31,4 +31,4 @@ ARG TEMPDIR
 COPY --from=fetcher ${TEMPDIR}/lokid /usr/sbin/
 
 CMD [ "/usr/sbin/lokid" ]
-EXPOSE 22022 22023
+EXPOSE 22022 22023 1090/udp
